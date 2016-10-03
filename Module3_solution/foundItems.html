@@ -1,0 +1,8 @@
+<h3 ng-if="list.found.length!=0">Matching menu items:</h3>
+<ol>
+  <li ng-repeat="item in list.found">
+    {{ item }}
+    <button ng-click="list.remove($index);">Don't want this one!</button>
+  </li>
+</ol>
+<div class="error" ng-if="list.found.length===0">Nothing found!</div>
