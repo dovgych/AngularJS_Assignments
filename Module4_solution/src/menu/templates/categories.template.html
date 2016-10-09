@@ -1,0 +1,6 @@
+<ul>
+	<li ng-repeat="item in $ctrl.items">
+		<a ui-sref="menuItems({categoryShortName: item.shortName})">
+		{{item.name}}</a>
+	</li>
+</ul>

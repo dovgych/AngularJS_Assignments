@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app='MenuApp'>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Restaurant Menu Application</title>
+  </head>
+  <body>
+    <h1>Welcome to the restaurant! Please, take a look at our menu:</h1>
+    <!-- <a ui-sref="categories" ui-sref-active="activeTab">Menu Categories</a> -->
+    <!-- <a ui-sref="items" ui-sref-active="activeTab">Category Items</a> -->
+    <ui-view></ui-view>
+    <!-- <loading-spinner></loading-spinner> -->
+
+    <!-- Libraries -->
+    <!-- <script src="lib/jquery-3.1.0.min.js"></script> -->
+    <script src="lib/angular.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+
+    <!-- Modules -->
+    <script src="src/data/data.module.js"></script>
+    <script src="src/spinner/spinner.module.js"></script>
+    <script src="src/menu/menuapp.module.js"></script>
+
+    <!-- Routes -->
+    <script src="src/menu/routes.js"></script>
+
+    <!-- 'MenuApp' module artifacts -->
+    <script src="src/menu/categories.component.js"></script>
+    <script src="src/menu/menucategories.controller.js"></script>
+    <script src="src/menu/categoryitems.controller.js"></script>
+
+    <!-- 'Data' module artifacts -->
+    <script src="src/data/menudata.service.js"></script>
+
+    <!-- 'Spinner' module artifacts -->
+    <!-- <script src="src/spinner/loadingspinner.component.js"></script> -->
+
+  </body>
+</html>
