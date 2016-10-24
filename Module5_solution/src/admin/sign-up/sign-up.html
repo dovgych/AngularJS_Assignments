@@ -1,0 +1,75 @@
+<div class="container">
+	<legend class="text-center">Please, fill the form and sign up!</legend>
+	<form name="signUpForm" novalidate>
+
+	<div class="container">
+		<span class="formLabel col-md-4 col-sm-4 col-xs-4 col-xxs-4">First Name *</span>
+		<input  type="text" class="formInput col-md-5 col-sm-5 col-xs-5 col-xxs-5" name="firstName" ng-model="signUpCtrl.user.firstName" placeholder="First Name" 
+				required minlength=2 ng-maxlength="16">
+		<span class="formError col-md-3 col-sm-3 col-xs-3 col-xxs-3"
+			ng-if="(signUpForm.firstName.$error.minlength || signUpForm.firstName.$error.required) && signUpForm.firstName.$touched">
+			Too short!
+		</span>
+		<span class="formError col-md-3 col-sm-3 col-xs-3 col-xxs-3" ng-if="signUpForm.firstName.$error.maxlength && signUpForm.firstName.$touched">
+			Too long!
+		</span>
+		<br>
+	</div>
+
+	<div class="container">
+		<span class="formLabel col-md-4 col-sm-4 col-xs-4 col-xxs-4">Last Name *</span>
+		<input  type="text" class="formInput col-md-5 col-sm-5 col-xs-5 col-xxs-5" name="lastName" ng-model="signUpCtrl.user.lastName" placeholder="Last Name" 
+				required minlength=2 ng-maxlength="16">
+		<span class="formError col-md-3 col-sm-3 col-xs-3 col-xxs-3"
+			ng-if="(signUpForm.lastName.$error.minlength || signUpForm.lastName.$error.required) && signUpForm.lastName.$touched">
+			Too short!
+		</span>
+		<span class="formError col-md-4 col-sm-4 col-xs-4 col-xxs-4" ng-if="signUpForm.lastName.$error.maxlength && signUpForm.lastName.$touched">
+			Too long!
+		</span>
+		<br>
+	</div>	
+
+	<div class="container">
+		<span class="formLabel col-md-4 col-sm-4 col-xs-4 col-xxs-4 ">Email *</span>
+		<input type="email" class="formInput col-md-5 col-sm-5 col-xs-5 col-xxs-5" name="email" placeholder="Email"
+			ng-model="signUpCtrl.user.email"
+			required>
+		<span class="formError col-md-3 col-sm-3 col-xs-3 col-xxs-3" ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">
+			Email address invalid!
+		</span>
+		<br>
+	</div>
+
+	<div class="container">
+		<span class="formLabel col-md-4 col-sm-4 col-xs-4 col-xxs-4">Phone Number *</span>
+		<input type="text" class="formInput col-md-5 col-sm-5 col-xs-5 col-xxs-5" name="phone" placeholder="Phone ###-###-####"
+			ng-model="signUpCtrl.user.phone"
+			pattern="(\d{3})-(\d{3})-(\d{4})"
+			required>
+		<span class="formError col-md-3 col-sm-3 col-xs-3 col-xxs-3" ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched">
+			Phone must be in the format ###-###-####.
+		</span>
+		<br>
+	</div>
+
+	<div class="container">
+		<span class="formLabel col-md-4 col-sm-4 col-xs-4 col-xxs-4">Favorite Dish</span>
+		<input type="text" class="formInput col-md-5 col-sm-5 col-xs-5 col-xxs-5" name="favDish" placeholder="Favorite Dish"
+			ng-model="signUpCtrl.user.favDish">
+		<span class="formError col-md-3 col-sm-3 col-xs-3 col-xxs-3" ng-if="signUpCtrl.favDishExists==false">
+			No such menu number exists.
+		</span>
+		<br>
+	</div>
+
+	<button class="formSubmit col-md-12 col-sm-12 col-xs-12 col-xxs-12"
+		ng-disabled="signUpForm.$invalid"
+		ng-click="signUpCtrl.submit()">Submit
+	</button>
+	<div ng-if="signUpCtrl.saved">
+		Your information has been saved
+	</div>
+
+	</form>
+</div>
